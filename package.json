@@ -24,6 +24,13 @@
   },
   "homepage": "https://github.com/SimulatedGREG/electron-vue#readme",
   "devDependencies": {
-    "suppose": "^0.6.1"
+    "babel-eslint": "^10.0.3",
+    "eslint": "^6.6.0",
+    "eslint-config-prettier": "^6.5.0",
+    "eslint-plugin-prettier": "^3.1.1",
+    "eslint-plugin-vue": "^6.0.1",
+    "prettier": "^1.19.1",
+    "suppose": "^0.6.1",
+    "vue-eslint-parser": "^7.0.0"
   }
 }
