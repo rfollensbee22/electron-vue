@@ -27,8 +27,11 @@
         </div>
         <div class="hack">
           <div class="title alt">Hack Functions</div>
-          <button class="alt" @click="open('https://electron.atom.io/docs/')">Print Receipt</button>
+          <button class="alt" @click="loadCam">Show Camera</button>
           <router-link class="alt" to="/LandingPage" tag="button">Landing Page: Uno</router-link>
+        </div>
+        <div>
+          <video id="video" height="480" width="800" autoplay></video>
         </div>
       </div>
     </main>
@@ -44,7 +47,43 @@
     methods: {
       open (link) {
         this.$electron.shell.openExternal(link)
+      },
+      loadCam () {
+        const constraints = {
+          audio: false,
+          video: {
+            mandatory: {
+              maxHeight: 480,
+              maxWidth: 800,
+              minHeight: 480,
+              minWidth: 800
+            }
+          }
+        }
+
+        const videoElement = document.getElementById('video')
+
+        // eslint-disable-next-line semi
+        navigator.getUserMedia = navigator.webkitGetUserMedia;
+        navigator.getUserMedia(
+          constraints,
+          // eslint-disable-next-line no-return-assign
+          stream => videoElement.src = window.URL.createObjectURL(stream),
+          error => console.error(error))
       }
+    },
+    closeCam () {
+      // TODO Close the bitch.
+      const videoElement = document.getElementById('video')
+
+      let stream = videoElement.srcObject
+      let tracks = stream.getTracks()
+
+      tracks.forEach(function (track) {
+        track.stop()
+      })
+
+      videoElement.srcObject = null
     }
   }
 </script>
