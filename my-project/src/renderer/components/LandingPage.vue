@@ -24,6 +24,7 @@
           <button class="alt" @click="open('https://electron.atom.io/docs/')">Electron</button>
           <button class="alt" @click="open('https://electron.atom.io/docs/')">VORV TEST</button>
           <button class="alt" @click="open('https://vuejs.org/v2/guide/')">Vue.js</button><br><br>
+          <button class="alt" @click="open('https://vuejs.org/v2/guide/')">Vue.js</button><br><br>
         </div>
         <div class="hack">
           <div class="title alt">Hack Functions</div>
