@@ -28,6 +28,7 @@
         <div class="hack">
           <div class="title alt">Hack Functions</div>
           <button class="alt" @click="loadCam">Show Camera</button>
+          <button class="alt" @click="closeCam">Close the *^&^%^ Camera</button>
           <router-link class="alt" to="/LandingPage" tag="button">Landing Page: Uno</router-link>
         </div>
         <div>
@@ -61,29 +62,31 @@
           }
         }
 
+        navigator.getUserMedia(constraints,
+          function (stream) {
+            var video = document.querySelector('video')
+            video.srcObject = stream
+            video.onloadedmetadata = function (e) {
+              video.play()
+            }
+          },
+          function (err) {
+            console.log('The following error occurred: ' + err.name)
+          }
+        )
+      },
+      closeCam () {
         const videoElement = document.getElementById('video')
 
-        // eslint-disable-next-line semi
-        navigator.getUserMedia = navigator.webkitGetUserMedia;
-        navigator.getUserMedia(
-          constraints,
-          // eslint-disable-next-line no-return-assign
-          stream => videoElement.src = window.URL.createObjectURL(stream),
-          error => console.error(error))
+        let stream = videoElement.srcObject
+        let tracks = stream.getTracks()
+
+        tracks.forEach(function (track) {
+          track.stop()
+        })
+
+        videoElement.srcObject = null
       }
-    },
-    closeCam () {
-      // TODO Close the bitch.
-      const videoElement = document.getElementById('video')
-
-      let stream = videoElement.srcObject
-      let tracks = stream.getTracks()
-
-      tracks.forEach(function (track) {
-        track.stop()
-      })
-
-      videoElement.srcObject = null
     }
   }
 </script>
