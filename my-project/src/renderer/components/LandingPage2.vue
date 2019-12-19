@@ -27,12 +27,14 @@
         </div>
         <div class="hack">
           <div class="title alt">Hack Functions</div>
-          <button class="alt" @click="loadCam">Show Camera</button>
-          <button class="alt" @click="closeCam">Close the *^&^%^ Camera</button>
+          <button id="loadCam" class="alt" @click="loadCam">Show Camera</button>
+          <button id="closeCam" class="alt" @click="closeCam">Close the *^&^%^ Camera</button>
+          <button id="snapPic" class="alt" @click="snapPic">Take a Pic</button>
+          <button id="savePic" class="alt" @click="savePic">Save Pic</button>
           <router-link class="alt" to="/LandingPage" tag="button">Landing Page: Uno</router-link>
         </div>
         <div>
-          <video id="video" height="480" width="800" autoplay></video>
+          <video id="video" height="480" width="320" autoplay></video>
         </div>
       </div>
     </main>
@@ -54,10 +56,10 @@
           audio: false,
           video: {
             mandatory: {
-              maxHeight: 480,
-              maxWidth: 800,
-              minHeight: 480,
-              minWidth: 800
+              maxHeight: document.querySelector('video').getAttribute('height'),
+              maxWidth: document.querySelector('video').getAttribute('width'),
+              minHeight: document.querySelector('video').getAttribute('height'),
+              minWidth: document.querySelector('video').getAttribute('width')
             }
           }
         }
@@ -86,6 +88,32 @@
         })
 
         videoElement.srcObject = null
+      },
+      snapPic () {
+        var video = document.querySelector('video')
+        var canvas = document.querySelector('canvas')
+        var context
+        var width = video.getAttribute('width')
+        var height = video.getAttribute('height')
+
+        canvas = canvas || document.createElement('canvas')
+        canvas.width = width
+        canvas.height = height
+
+        context = canvas.getContext('2d')
+        context.drawImage(video, 0, 0, 320, 480)
+      },
+      savePic () {
+        // Get the DataUrl from the Canvas
+        var canvas = document.querySelector('canvas')
+        var fs = require('fs')
+        const url = canvas.toDataURL('image/jpg', 0.8)
+        var filePath = 'myImage.jpg'
+        // remove Base64 stuff from the Image
+        const base64Data = url.replace(/^data:image\/png;base64,/, '')
+        fs.writeFile(filePath, base64Data, 'base64', function (err) {
+          console.log(err)
+        })
       }
     }
   }
@@ -195,5 +223,9 @@
   .hack button.alt {
     color: #215fab;
     background-color: transparent;
+  }
+
+  #video {
+    padding-top:5px;
   }
 </style>
