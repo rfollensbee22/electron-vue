@@ -1,35 +1,39 @@
 <template>
-  <div id="wrapper">
-    <img id="logo" src="~@/assets/logo.png" alt="electron-vue">
+  <div id="wrapper2">
+    <img id="logo" src="~@/assets/logo2.png" alt="RecTrac">
     <main>
       <div class="left-side">
-        <span class="title">
-          Landing Page: The Deuce
+        <span class="title3">
+        &nbsp &nbsp MAKE IT BETTER.<BR></BR>
+        &nbsp &nbsp MAKE IT SIMPLER.<BR></BR>
+        &nbsp &nbsp MAKE A DIFFERENCE FOR OUR CUSTOMERS.
         </span>
         <system-information2></system-information2>
       </div>
 
       <div class="right-side">
-        <div class="doc">
-          <div class="title">Getting Started on the Left Side!</div>
+        <div class="doc2">
+          <div class="title2">Fun with Cameras!</div>
           <p>
             Spicy jalapeno bacon ipsum dolor amet jerky cupim pork, hamburger chislic rump tri-tip drumstick leberkas spare ribs 
             tongue chicken shank jowl cow. Ham short ribs sausage, meatloaf pork belly venison tail tenderloin chuck. 
             Tri-tip sirloin biltong, ham hock drumstick tenderloin brisket. Short loin capicola doner turducken kevin pig pastrami 
             t-bone andouille pork belly ball tip picanha. Strip steak t-bone cupim tri-tip, shankle meatloaf
           </p>
-          <button @click="open('https://simulatedgreg.gitbooks.io/electron-vue/content/')">Read the Docs</button><br><br>
+          <br></br>
+          <button @click="open('https://simulatedgreg.gitbooks.io/electron-vue/content/en/')">Read the Docs</button><br><br>
         </div>
-        <div class="doc">
-          <div class="title alt">Other Documentation</div>
+        <div class="doc2">
+          <div class="title2 alt">External Documentation</div>
           <button class="alt" @click="open('https://electron.atom.io/docs/')">Electron</button>
-          <button class="alt" @click="open('https://vuejs.org/v2/guide/')">Vue.js</button><br><br>
+          <button class="alt" @click="open('https://vuejs.org/v2/guide/')">Vue.js</button>
+          <button class="alt" @click="open('https://github.com/SimulatedGREG/electron-vue')">SimulatedGREG</button><br><br>
         </div>
-        <div class="hack">
-          <div class="title alt">Hack Functions</div>
-          <button class="alt" @click="loadCam">Show Camera</button>
-          <button class="alt" @click="closeCam">Close the *^&^%^ Camera</button>
-          <router-link class="alt" to="/LandingPage" tag="button">Landing Page: Uno</router-link>
+        <div class="hack2">
+          <div class="title2 alt">Hack Functions</div>
+          <button class="alt2" @click="loadCam">Show Camera</button>
+          <button class="alt2" @click="closeCam">Close the *^&^%^ Camera</button>
+          <router-link class="alt2" to="/LandingPage" tag="button">Landing Page: Uno</router-link>
         </div>
         <div>
           <video id="video" height="480" width="800" autoplay></video>
@@ -102,12 +106,12 @@
 
   body { font-family: 'Source Sans Pro', sans-serif; }
 
-  #wrapper {
+  #wrapper2 {
     background:
       radial-gradient(
         ellipse at top left,
-        rgba(255, 255, 255, 1) 40%,
-        rgba(229, 229, 229, .9) 100%
+        rgb(1,92, 142) 40%,
+        rgba(255, 255, 255, .9) 100%
       );
     height: 100vh;
     padding: 60px 80px;
@@ -138,14 +142,23 @@
     margin-bottom: 10px;
   }
 
-  .title {
-    color: #2c3e50;
+  .title2 {
+    color: #ffffff;
     font-size: 20px;
     font-weight: bold;
     margin-bottom: 6px;
   }
+  .title3 {
+    color: #ffffff;
+    font-size: 20px;
+    font-weight: bold;
+    margin-bottom: 6px;
+    transform: skewX(-20deg);
+    border-left: solid white 2px; 
+    text-indent: 10px hanging ;
+  }
 
-  .title.alt {
+  .title2.alt {
     font-size: 18px;
     margin-bottom: 10px;
   }
@@ -155,7 +168,7 @@
     margin-bottom: 10px;
   }
 
-  .doc button {
+  .doc2 button {
     font-size: .8em;
     cursor: pointer;
     outline: none;
@@ -163,14 +176,15 @@
     border-radius: 2em;
     display: inline-block;
     color: #fff;
-    background-color: #4fc08d;
+    background-color: #215fab;
     transition: all 0.15s ease;
     box-sizing: border-box;
-    border: 1px solid #4fc08d;
+    border: 1px solid #215fab;
   }
 
-  .doc button.alt {
-    color: #42b983;
+  .doc2 button.alt {
+    color: #ffffff;
+    border:1px solid rgba(255, 255, 255, .9);
     background-color: transparent;
   }
 
@@ -179,7 +193,7 @@
     margin-bottom: 10px;
   }
 
-  .hack button {
+  .hack2 button {
     cursor: pointer;
     outline: #2c3e50;
     padding: 0.75em 2em;
@@ -192,8 +206,8 @@
     border: 2px solid #215fab;
   }
 
-  .hack button.alt {
-    color: #215fab;
+  .hack button.alt2 {
+    color: #ffffff;
     background-color: transparent;
   }
 </style>
