@@ -19,6 +19,17 @@
             tongue chicken shank jowl cow. Ham short ribs sausage, meatloaf pork belly venison tail tenderloin chuck. 
             Tri-tip sirloin biltong, ham hock drumstick tenderloin brisket. Short loin capicola doner turducken kevin pig pastrami 
             t-bone andouille pork belly ball tip picanha. Strip steak t-bone cupim tri-tip, shankle meatloaf
+          <br></br>
+          <UL><U>Takeaways</U>
+            <li>Pat Had A Nice Office</li>
+            <li>Dependencies Are A Pain</li>
+            <li>You gotta know when to fold'em</li>
+            <li>ESLint can be frustrating - but will keep you honest</li>
+            <li>Source Control Is Your Friend :) </li>
+
+
+          </UL>
+
           </p>
           <br></br>
           <button @click="open('https://simulatedgreg.gitbooks.io/electron-vue/content/en/')">Read the Docs</button><br><br>
@@ -243,4 +254,14 @@
   #video {
     padding-top:5px;
   }
+  ul {
+  display: block;
+  list-style-type: square;
+  margin-top: 1em;
+  margin-bottom: 1 em;
+  margin-left: 0;
+  margin-right: 0;
+  padding-left: 40px;
+}
+
 </style>
