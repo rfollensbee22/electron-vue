@@ -224,7 +224,8 @@
   .hack2 button {
     cursor: pointer;
     outline: #2c3e50;
-    padding: 0.75em 2em;
+    padding: .75em 2em;
+    margin: 5px;
     border-radius: 2em;
     display: inline-block;
     color: #fff;
