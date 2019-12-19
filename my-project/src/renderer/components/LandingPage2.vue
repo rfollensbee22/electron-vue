@@ -26,10 +26,7 @@
             <li>You gotta know when to fold'em</li>
             <li>ESLint can be frustrating - but will keep you honest</li>
             <li>Source Control Is Your Friend :) </li>
-
-
           </UL>
-
           </p>
           <br></br>
           <button @click="open('https://simulatedgreg.gitbooks.io/electron-vue/content/en/')">Read the Docs</button><br><br>
@@ -152,7 +149,7 @@
         rgb(1,92, 142) 40%,
         rgba(255, 255, 255, .9) 100%
       );
-    height: 100vh;
+    height: 125vh;
     padding: 60px 80px;
     width: 100vw;
   }
