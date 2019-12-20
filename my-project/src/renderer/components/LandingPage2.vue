@@ -121,6 +121,10 @@
           ctx.font = '40px serif'
           ctx.fillStyle = 'white'
           ctx.fillText('Photo Saved', 30, 100)
+          setTimeout(clearFunction, 3000)
+          function clearFunction () {
+            ctx.clearRect(0, 0, canvas.width, canvas.height)
+          }
         })
       }
     }
