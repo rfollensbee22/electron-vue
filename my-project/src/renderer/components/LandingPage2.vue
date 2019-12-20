@@ -15,22 +15,12 @@
         <div class="doc2">
           <div class="title2">Fun with Cameras!</div>
           <p>
-            Spicy jalapeno bacon ipsum dolor amet jerky cupim pork, hamburger chislic rump tri-tip drumstick leberkas spare ribs 
-            tongue chicken shank jowl cow. Ham short ribs sausage, meatloaf pork belly venison tail tenderloin chuck. 
-            Tri-tip sirloin biltong, ham hock drumstick tenderloin brisket. Short loin capicola doner turducken kevin pig pastrami 
-            t-bone andouille pork belly ball tip picanha. Strip steak t-bone cupim tri-tip, shankle meatloaf
-          <br></br>
-          <UL><U>Takeaways</U>
-            <li>Pat Had A Nice Office</li>
-            <li>Dependencies Are A Pain</li>
-            <li>You gotta know when to fold'em</li>
-            <li>ESLint can be frustrating - but will keep you honest</li>
-            <li>Source Control Is Your Friend :) </li>
-          </UL>
+            Project Overview
+            <br></br>
+            This is where we tell them what we will tell them 
           </p>
-          <br></br>
-          <button @click="open('https://simulatedgreg.gitbooks.io/electron-vue/content/en/')">Read the Docs</button><br><br>
         </div>
+        <br></br>
         <div class="doc2">
           <div class="title2 alt">External Documentation</div>
           <button class="alt" @click="open('https://electron.atom.io/docs/')">Electron</button>
@@ -149,7 +139,7 @@
         rgb(1,92, 142) 40%,
         rgba(255, 255, 255, .9) 100%
       );
-    height: 125vh;
+    height: 100vh;
     padding: 60px 80px;
     width: 100vw;
   }
