@@ -139,9 +139,9 @@
         rgb(1,92, 142) 40%,
         rgba(255, 255, 255, .9) 100%
       );
-    height: 100vh;
+    height: 100%;
     padding: 60px 80px;
-    width: 100vw;
+    width: 100%;
   }
 
   #logo {
