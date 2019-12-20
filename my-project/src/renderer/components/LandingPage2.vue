@@ -115,6 +115,12 @@
         const base64Data = url.replace(/^data:image\/png;base64,/, '')
         fs.writeFile(filePath, base64Data, 'base64', function (err) {
           console.log(err)
+          var ctx = canvas.getContext('2d')
+          ctx.fillStyle = 'rgba(0, 255, 0, 0.5)'
+          ctx.fillRect(0, 0, 320, 480)
+          ctx.font = '40px serif'
+          ctx.fillStyle = 'white'
+          ctx.fillText('Photo Saved', 30, 100)
         })
       }
     }
