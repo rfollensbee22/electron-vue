@@ -16,7 +16,7 @@
             electron-vue comes packed with detailed documentation that covers everything from
             internal configurations, using the project structure, building your application,
             and so much more. comes with pre-defined scripts for building an installer, as well
-            as a couple basic automated test scripts.
+            as a couple basic automated test scripts. <br><br>NO PHOTOSHOP WAS USED
           </p>
           <button @click="open('https://simulatedgreg.gitbooks.io/electron-vue/content/')">Read the Docs</button><br><br>
         </div>
